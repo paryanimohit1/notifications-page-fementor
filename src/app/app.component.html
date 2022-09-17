@@ -1,0 +1,27 @@
+<main class="main-container">
+  <div class="header-container">
+    <h1 class="notification-header">Notifications</h1>
+    <p class="unread-notification-count">{{ unreadNotificationCount }}</p>
+    <button class="mark-all-read blue-on-hover" (click)="markAllAsRead()">
+      Mark all as read
+    </button>
+  </div>
+  <div class="notifications-list-container">
+    <div *ngFor="let notification of notificationsList">
+      <notification-item
+        (click)="markAsRead(notification.notification_id)"
+        [ngStyle]="{ cursor: notification.isUnread ? 'pointer' : 'default' }"
+        [ngClass]="{ 'unread-notification': notification.isUnread }"
+        [notificationData]="notification"
+      ></notification-item>
+    </div>
+  </div>
+</main>
+
+<p class="attribution">
+  Challenge by
+  <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+    >Frontend Mentor</a
+  >. Coded by
+  <a href="https://github.com/paryanimohit1" target="_blank">Mohit Paryani</a>.
+</p>

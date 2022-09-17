@@ -1,0 +1,79 @@
+@import '../assets/styles/vars.scss';
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 20.75rem;
+  min-height: 100vh;
+
+  .main-container {
+    background-color: $white;
+    max-width: 45rem;
+    padding: 2rem 2rem 0.5rem 2rem;
+    border-radius: 1rem;
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+
+      .notification-header {
+        font-size: $fs24;
+        font-weight: $fw800;
+      }
+
+      .unread-notification-count {
+        min-width: 2em;
+        line-height: 1em;
+        text-align: center;
+        margin-left: 0.75em;
+        padding: 0.25em;
+        border-radius: 0.5em;
+        background-color: $blue;
+        color: $white;
+      }
+
+      .mark-all-read {
+        background: none;
+        outline: none;
+        border: none;
+        margin-left: auto;
+        cursor: pointer;
+      }
+    }
+
+    .notifications-list-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
+  .attribution {
+    text-align: center;
+    padding-block: 0.5em;
+
+    a {
+      color: $blue;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  :host {
+    .main-container {
+      padding: 2rem 1rem 0.5rem;
+
+      .header-container {
+        margin-bottom: 2rem;
+
+        .notification-header {
+          font-size: $fs20;
+          font-weight: $fw800;
+        }
+      }
+    }
+  }
+}

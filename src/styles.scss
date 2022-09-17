@@ -1,4 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@import './assets/styles/vars.scss';
+
 * {
   box-sizing: border-box;
+  font-family: $font-family;
+  margin: 0;
+}
+
+p,
+span,
+button {
+  font-size: $fs16;
+}
+
+body {
+  background: $very-light-grayish-blue;
+}
+
+.blue-on-hover:hover {
+  color: $blue  !important;
+}
+
+
+@media only screen and (max-width: 400px) {
+  p,
+  span {
+    font-size: $fs14;
+  }
 }

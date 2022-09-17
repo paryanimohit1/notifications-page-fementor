@@ -1,0 +1,10 @@
+<img [src]="notification.avatar" alt="Avatar" class="avatar"/>
+<p class="notification-text">
+  <span class="name blue-on-hover">{{ notification.name }} </span>
+  <span class="action">{{ notification.action }} </span>
+  <span class="action-taken-on blue-on-hover" [ngClass]="{ 'blue-color-text': notification.isGroup }" *ngIf="notification.actionTakenOn">{{ notification.actionTakenOn }} </span>
+  <span *ngIf="notification.isUnread" class="unread-icon"></span>
+</p>
+<span class="time">{{ notification.time }}</span>
+<img class="supporting-image" *ngIf="notification.supportingImage" [src]="notification.supportingImage" alt="Posted picture"/>
+<p class="supporting-text" *ngIf="notification.supportingText">{{ notification.supportingText }}</p>
