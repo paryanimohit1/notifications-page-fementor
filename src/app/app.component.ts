@@ -24,9 +24,13 @@ export class AppComponent implements OnInit {
 
   markAsRead(notification_id: number) {
     if (notification_id) {
-      this.notificationsList.find(
+      let notification = this.notificationsList.find(
         (n) => n.notification_id === notification_id
-      )!.isUnread = false;
+      )!;
+      if (notification && notification.isUnread) {
+        notification.isUnread = false;
+        this.unreadNotificationCount--;
+      }
     }
   }
 
