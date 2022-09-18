@@ -1,4 +1,4 @@
-@import '../assets/styles/vars.scss';
+@import '/src/styles/vars.scss';
 
 :host {
   display: flex;
@@ -13,6 +13,7 @@
     max-width: 45rem;
     padding: 2rem 2rem 0.5rem 2rem;
     border-radius: 1rem;
+    box-shadow: 0 0 20px $light-grayish-blue-1;
 
     .header-container {
       display: flex;
@@ -71,7 +72,6 @@
 
         .notification-header {
           font-size: $fs20;
-          font-weight: $fw800;
         }
       }
     }
